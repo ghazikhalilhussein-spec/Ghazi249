@@ -43,7 +43,15 @@ const actionItems = [
 ]
 
 function AppContent() {
-  const { t, dir } = useLanguage()
+  const { t, dir, isHydrated } = useLanguage()
+
+  if (!isHydrated) {
+    return (
+      <div className="min-h-screen bg-[#0d0d0d] flex items-center justify-center">
+        <div className="text-3xl font-black tracking-tight text-rose-500">FLEX</div>
+      </div>
+    )
+  }
 
   return (
     <div dir={dir} className="min-h-screen bg-background">

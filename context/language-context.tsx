@@ -50,25 +50,38 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void
   t: (key: string) => string
   dir: "ltr" | "rtl"
+  isHydrated: boolean
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
+  const [isHydrated, setIsHydrated] = useState(false)
 
   useEffect(() => {
-    const savedLang = localStorage.getItem("flex-language") as Language
-    if (savedLang && (savedLang === "en" || savedLang === "ar")) {
-      setLanguage(savedLang)
+    setIsHydrated(true)
+    try {
+      const savedLang = localStorage.getItem("flex-language") as Language
+      if (savedLang && (savedLang === "en" || savedLang === "ar")) {
+        setLanguage(savedLang)
+      }
+    } catch (e) {
+      // localStorage not available
     }
   }, [])
 
   useEffect(() => {
-    localStorage.setItem("flex-language", language)
-    document.documentElement.lang = language
-    document.documentElement.dir = language === "ar" ? "rtl" : "ltr"
-  }, [language])
+    if (isHydrated) {
+      try {
+        localStorage.setItem("flex-language", language)
+      } catch (e) {
+        // localStorage not available
+      }
+      document.documentElement.lang = language
+      document.documentElement.dir = language === "ar" ? "rtl" : "ltr"
+    }
+  }, [language, isHydrated])
 
   const t = (key: string): string => {
     return translations[key]?.[language] || key
@@ -77,7 +90,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const dir = language === "ar" ? "rtl" : "ltr"
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, dir }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, dir, isHydrated }}>
       {children}
     </LanguageContext.Provider>
   )
