@@ -12,7 +12,6 @@ interface Translations {
 }
 
 export const translations: Translations = {
-  // Header
   home: { en: "Home", ar: "الرئيسية" },
   movies: { en: "Movies", ar: "أفلام" },
   series: { en: "Series", ar: "مسلسلات" },
@@ -21,14 +20,12 @@ export const translations: Translations = {
   notifications: { en: "Notifications", ar: "إشعارات" },
   profile: { en: "Profile", ar: "الملف الشخصي" },
   
-  // Marquee
   newRelease: { en: "NEW RELEASE", ar: "إصدار جديد" },
   watchNow: { en: "Watch Now", ar: "شاهد الآن" },
   exclusive: { en: "EXCLUSIVE", ar: "حصري" },
   trending: { en: "TRENDING", ar: "رائج" },
   limited: { en: "LIMITED TIME", ar: "لوقت محدود" },
   
-  // Hero
   heroTitle: { en: "The Last Kingdom", ar: "المملكة الأخيرة" },
   heroDescription: { 
     en: "A gripping saga of kingdoms at war, epic battles, and the fight for destiny. Follow the journey of a hero torn between two worlds.",
@@ -37,14 +34,12 @@ export const translations: Translations = {
   play: { en: "Play", ar: "تشغيل" },
   moreInfo: { en: "More Info", ar: "مزيد من المعلومات" },
   
-  // Sections
   continueWatching: { en: "Continue Watching", ar: "متابعة المشاهدة" },
   trendingNow: { en: "Trending Now", ar: "الرائج الآن" },
   topRated: { en: "Top Rated", ar: "الأعلى تقييماً" },
   newReleases: { en: "New Releases", ar: "إصدارات جديدة" },
   action: { en: "Action & Adventure", ar: "أكشن ومغامرات" },
   
-  // Language
   language: { en: "Language", ar: "اللغة" },
   english: { en: "English", ar: "الإنجليزية" },
   arabic: { en: "Arabic", ar: "العربية" },

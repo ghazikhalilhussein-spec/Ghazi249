@@ -9,22 +9,18 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[85vh] flex items-end pb-20 pt-32">
-      {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1920&q=80')`,
         }}
       >
-        {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent" />
       </div>
 
-      {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl">
-          {/* Badge */}
           <div className="flex items-center gap-2 mb-4">
             <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded">
               FLEX ORIGINAL
@@ -35,12 +31,10 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Title */}
           <h2 className="text-5xl md:text-7xl font-black mb-4 tracking-tight">
             {t("heroTitle")}
           </h2>
 
-          {/* Metadata */}
           <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
             <span>2024</span>
             <span className="w-1 h-1 bg-muted-foreground rounded-full" />
@@ -51,12 +45,10 @@ export function HeroSection() {
             <span>4K Ultra HD</span>
           </div>
 
-          {/* Description */}
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
             {t("heroDescription")}
           </p>
 
-          {/* Actions */}
           <div className="flex items-center gap-4">
             <Button size="lg" className="gap-2 text-base font-semibold px-8">
               <Play className="h-5 w-5 fill-current" />

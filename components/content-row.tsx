@@ -42,12 +42,9 @@ export function ContentRow({ title, items }: ContentRowProps) {
   return (
     <section className="py-6">
       <div className="container mx-auto px-4">
-        {/* Title */}
         <h2 className="text-xl md:text-2xl font-bold mb-4">{title}</h2>
 
-        {/* Scrollable Row */}
         <div className="group relative">
-          {/* Left Arrow */}
           <Button
             variant="ghost"
             size="icon"
@@ -57,7 +54,6 @@ export function ContentRow({ title, items }: ContentRowProps) {
             <ChevronLeft className="h-8 w-8" />
           </Button>
 
-          {/* Content */}
           <div 
             ref={scrollRef}
             className="flex gap-4 overflow-x-auto scrollbar-hide pb-4"
@@ -75,7 +71,6 @@ export function ContentRow({ title, items }: ContentRowProps) {
             ))}
           </div>
 
-          {/* Right Arrow */}
           <Button
             variant="ghost"
             size="icon"

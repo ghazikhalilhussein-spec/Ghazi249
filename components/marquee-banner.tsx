@@ -27,11 +27,10 @@ export function MarqueeBanner() {
           >
             <item.icon className="h-4 w-4 text-primary" />
             <span className="text-primary font-bold">{item.text}</span>
-            <span className="text-muted-foreground">•</span>
+            <span className="text-muted-foreground">-</span>
             <span className="text-foreground">{item.highlight}</span>
           </div>
         ))}
-        {/* Duplicate for seamless loop */}
         {announcements.map((item, index) => (
           <div
             key={`dup-${index}`}
@@ -39,7 +38,7 @@ export function MarqueeBanner() {
           >
             <item.icon className="h-4 w-4 text-primary" />
             <span className="text-primary font-bold">{item.text}</span>
-            <span className="text-muted-foreground">•</span>
+            <span className="text-muted-foreground">-</span>
             <span className="text-foreground">{item.highlight}</span>
           </div>
         ))}

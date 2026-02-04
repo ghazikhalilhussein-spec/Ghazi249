@@ -14,7 +14,6 @@ interface ContentCardProps {
 export function ContentCard({ title, image, year, rating, progress }: ContentCardProps) {
   return (
     <div className="group relative flex-shrink-0 w-[180px] md:w-[220px] cursor-pointer">
-      {/* Image Container */}
       <div className="relative aspect-[2/3] rounded-lg overflow-hidden bg-card">
         <img
           src={image}
@@ -22,7 +21,6 @@ export function ContentCard({ title, image, year, rating, progress }: ContentCar
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         
-        {/* Hover Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="absolute bottom-0 left-0 right-0 p-4">
             <div className="flex items-center gap-2 mb-2">
@@ -43,7 +41,6 @@ export function ContentCard({ title, image, year, rating, progress }: ContentCar
           </div>
         </div>
 
-        {/* Progress Bar (for continue watching) */}
         {progress !== undefined && (
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-muted">
             <div 
@@ -54,7 +51,6 @@ export function ContentCard({ title, image, year, rating, progress }: ContentCar
         )}
       </div>
 
-      {/* Title & Info */}
       <div className="mt-2">
         <h3 className="text-sm font-medium truncate group-hover:text-primary transition-colors">
           {title}
